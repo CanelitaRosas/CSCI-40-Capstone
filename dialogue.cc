@@ -66,6 +66,7 @@ void initializeDialogues() {
 // Display a dialogue by ID
 void showDialogue(string dialogueID) {
     cout << "\n";
+    cout << "hello" << endl;
 
     //Check if dialogue exists
     if (dialogues.find(dialogueID) == dialogues.end()) {
