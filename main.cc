@@ -77,5 +77,3 @@ int main(){
         cout << "The lights go dark, you can't tell if your eyes are open or you're dead.... a deafening explosion rings your ears and you are obliterated\n"
         cout << "YOU PERISHED";
     }
-
-
