@@ -2,7 +2,7 @@
 #include <iostream>
 #include "/public/colors.h"
 
-
+//WOW!
 
 // Storage for all dialogues
 std::map<std::string, Dialogue> dialogues;
