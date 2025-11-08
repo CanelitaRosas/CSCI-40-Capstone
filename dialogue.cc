@@ -31,7 +31,7 @@ void initializeDialogues() {
             {"speech", "Bro", "Home grown. Fresh off the rack. My special recipie"}
         }
     };
-
+    
     //=================================
     // LOCATION DESCRIPTIONS
     //=================================
