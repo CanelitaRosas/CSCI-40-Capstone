@@ -2,7 +2,7 @@
 #include <iostream>
 #include "/public/colors.h"
 
-
+//WOW!
 
 // Storage for all dialogues
 std::map<std::string, Dialogue> dialogues;
@@ -31,7 +31,7 @@ void initializeDialogues() {
             {"speech", "Bro", "Home grown. Fresh off the rack. My special recipie"}
         }
     };
-
+    
     //=================================
     // LOCATION DESCRIPTIONS
     //=================================
@@ -66,6 +66,7 @@ void initializeDialogues() {
 // Display a dialogue by ID
 void showDialogue(string dialogueID) {
     cout << "\n";
+    cout << "hello" << endl;
 
     //Check if dialogue exists
     if (dialogues.find(dialogueID) == dialogues.end()) {
