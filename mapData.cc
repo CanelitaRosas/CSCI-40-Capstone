@@ -56,7 +56,8 @@ const vector<string> baseMap {
 const vector<Point> anchor {
     {49,12},
     {49,39},
-    {49,66}
+    {49,66},
+    {49,98},
 };
 int main() {
     for (int i = 0; i < baseMap.size(); i++) {
