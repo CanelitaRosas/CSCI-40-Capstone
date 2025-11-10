@@ -16,7 +16,9 @@
 
     //Test dialogues with actions
     cout << "\n--- Testing Dialogues with Actions ---" << endl;
-    showDialogue("RANDOM_BRO");
+    showDialogueWithPause("RANDOM_BRO");
+
+    showDialogue("TEST_2");
 
     cout << "\n=== END OF Test ===" << endl;
 
