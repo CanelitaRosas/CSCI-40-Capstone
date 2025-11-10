@@ -1,7 +1,30 @@
 #include <vector>
 #include <string>
-
+#include <iostream> //remove when done testing
 using namespace std;
+
+struct Point {
+    int x;
+    int y;
+};
+
+const vector<string> nodeLocked {
+    "+---------+",
+    "|   ( )   |",
+    "|   / \\   |",
+    "|   ---   |",
+    "+---------+",
+
+};
+
+const vector<string> nodePlayer {
+    "+---------+",
+    "|    *    |",
+    "|   /|\\   |",
+    "|   / \\   |",
+    "+---------+",
+};
+
 
 const vector<string> baseMap {
     "******************************************************************************************************************",
@@ -30,3 +53,21 @@ const vector<string> baseMap {
     "*     +---------+                +---------+                +---------+                     +---------+          *",
     "******************************************************************************************************************",
 };
+const vector<Point> anchor {
+    {49,12},
+    {49,39},
+    {49,66}
+};
+int main() {
+    for (int i = 0; i < baseMap.size(); i++) {
+        cout << baseMap.at(i) << endl;
+    }
+
+    for (int i = 0; i < nodePlayer.size(); i++) {
+        cout << nodePlayer.at(i) << endl;
+    }
+
+    for (int i = 0; i < nodeLocked.size(); i++) {
+        cout << nodeLocked.at(i) << endl;
+    }
+}
