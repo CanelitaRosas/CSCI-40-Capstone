@@ -6,6 +6,14 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+bool roseN( const vector<bool> &r){
+    for (int i = 0; i<r.size();i++){
+        if (r.at(i) == true){
+            return true;
+        }
+        else return false;
+    }
+}
 //whe you get where you want to go how can you explain what youve done, virtue wasnt conv at the time
 //puzzles
 //Billiard ball room 
@@ -63,8 +71,8 @@ int main(){
     int weighLeft2 = 0;
     int weighRight2 = 0;
     char p1ch;
-    if (rose.at(0)==true){
-        cout << "This your chance.... \n";
+    if (roseN(rose)){
+        cout << "You hear a crowd of laughter roar behind you from the top of the pit,This your chance.... \n";
         cout << "You feel you could snuff the rose to your gain, will you?? y/n";
          while (true){
         cin >> p1ch;
@@ -128,10 +136,213 @@ int main(){
         cout << "YOU PERISHED\n";
         return 0;
     }
-    if (rose.at(0)==false){
+    if (roseN(rose)){
         // they say actions show who a person really is, i think youve shown us all who you really and maybe more importanly why you arew here...
-    cout << "A voice screeches onto the intercom, you're not a very good person are you???\n";
+    cout << "A voice screeches onto the intercom"<<endl;
+    cout <<"you're not a very good person are you???\n";
     cout << "what use is life without love, and of what use is it to be warrior in a garden without knowing what it is to be a gardener???\n";
     cout << "answer me this is it better to perish here a gardener or exit this place a warrior?\n";
+    cout << "Don't answer that... They say when people show you who they really are to believe them and I think you've show us all just who you really are"<<endl;
+    cout << "Laughter erupts behind you as you hear the door in front of you unlock"<<endl;
     }
+    else if (roseN(rose) == false){
+         cout << "A voice screeches onto the intercom"<<endl;
+         cout << "A simple test you were expected to pass it but why are you kidding yourself?"<<endl;
+         cout << "We are the only ones wathcing you and we have already judged you, do you think you have anything in common with us?"<<endl;
+         cout << "You wouldn't be in your predictament if you did... You'd be where I stand not the other way around"<< endl;
+         cout <<"You hear a door unlock in front of you\n";
+    }
+    // puzzle two starts just after a combat node and a rose is given
+    char p2ch;
+    if (roseN(rose)){
+        cout << "Laughter erputps behind you along with screaming and yelling, this is your chance make a rose perish by your hand???\n";
+         while (true){
+        cin >> p2ch;
+        if (p2ch == 'y' or p2ch == 'Y' or p2ch == 'n' or p2ch == 'N'){
+            break;
+        }
+    }
+    if (p2ch == 'y' or p2ch == 'Y'){
+        cout << "The rose perishes by your hand, you always did enjoy innocence lost. You hear screaming behind you from the top of the pit...\n";
+        cout << "Yelling and choas can be heard from the hole where you were thrown from it fills the room with noise the start yelling uniformly\n";
+        cout << "EPONENTIAL GROWTH!!!!! \n";
+        if (crushed == false){
+            crushed = true;
+        }
+        rose.at(1) = false; 
+    }
+     else if (p2ch == 'N' or p2ch == 'n'){
+        cout << "\n";
+    } 
+    }
+    cout << "You step into a room with thick glass on all sides, the floor is glass as are the walls and ceiling, behind the glass is rapid water\n";
+    cout << "there is only a tablet in the middle of the room, and a voice crackles onto the intercom\n";
+    if (crushed == true){
+    cout << "I can give you a hint about this place... about yourself even\n";
+    cout << "Nothing you do from here on matters... you have made your choice that to reiterate is why you are likely here to begin with\n";
+    cout << "I have a question for you to ponder about yourself... free will is what brought you here so my question to you is can you blame your enviroment for the way you are or for the things you have done and all the while you tell yourself they had to be done because virtue wasn't conveneint at the time?\n";
+    cout << "Let's presume for a second you were born here into this pit... do you blame the pit for the choices you have made...? do you blame me?, do you blame yourself...? or is there something else?\n";
+    }
+    else if (crushed == false){
+        cout << "No matter how cruel this pit is to you, you keep trying don't you? It's admirable... Let me ask you a question to ponder to yourself while you are here\n";
+        cout << "If you chose to go the other route who really is to blame? We all have free will do we not?\n";
+        cout << "The pit has been cruel to you do you blame it? Do you think you were always bound to make a virtuos decision because you have a true nature? Do you think evil is made or born? Both?\n";
+        cout << "Ponder to yourself who really would be to blame for you becoming a bad person, you? The pit? Whatever threw you in here? Me? or is there something else?\n";
+        cout << "You try and kid yourself like you are noble or good even but again then why are you here to begin with..."<<endl;
+    }
+    cout << "A staduim is being filled with drops of water, the amount of water in the stadium doubles each second. The stadium is full of water at thirty seconds. So...\n";
+    cout << "The question to ask yourself is when is the stadium half full?\n";
+    if (crushed == true){
+        cout << "if you are wrong you die here and you've already received all the help you can get haven't you? You didn't care what that cost you and even if you do somehow escape this place it won't matter. You'll see...\n";
+    }
+    else if(crushed == false){
+        cout << "Time is your friend now, that's all you have to help you now so take all the time you need...\n";
+    }
+    win = false;
+    int t = 0;
+    cout << "The tablet displays on its screen: delta t =?";
+    cout << "Enter delta t\n";
+    while (true){
+        cin>> t;
+        if(!cin){
+            continue;
+        }
+        else {
+            break;
+        }
+    }
+    if (t == 29){
+        win = true;
+    }
+    else {
+        win = false;
+    }
+    if (win == false){
+        cout << "The glass covering the ceiling opens revealing a net, water floods the entire room and you drown to death\n";
+        cout << "YOU PERISHED\n";
+        return 0;
+    }
+    else {
+        cout << "You hear the door in front of you unlock, and prepare yourself for what is to come\n";
+    }
+    // player moves to the next room gets a rose after completing another combat
+    rose.at(2) = true;
+    char p3ch;
+    cout <<"You walk into a room this time there is money signs and huge yellow game show lights all over the walls\n";
+    if(roseN(rose) == true){
+        cout << "Sounds of snoring and coughing echo through the empty rooms behind you, they are coming from the pit...\n";
+        cout << "Now is your chance to strike, kill a rose?\n";
+         while (true){
+        cin >> p3ch;
+        if (p3ch == 'y' or p3ch == 'Y' or p3ch == 'n' or p3ch == 'N'){
+            break;
+        }
+    }
+    if (p3ch == 'y' or p3ch == 'Y'){
+        cout << "You crush the rose and it's petals and leave it's remains on the ground, you aren't trying to even pretend to be a good person you have embraced who you really are\n";
+        cout << "A zombie like horde snarls in unison\n";
+        cout << "THE BIG PICTURE\n";
+        if (crushed == false){
+            crushed = true;
+        }
+        rose.at(2) = false; 
+    }
+     else if (p3ch == 'N' or p3ch == 'n'){
+        cout << "You saved another rose you won't let them die here\n";
+    } 
+    }
+    cout << "Faint static turns into large popping sounds from the intercom\n";
+    if (crushed == true){
+        cout<<"You shouldn't try and hide who you really are, wear it like armor and it can never be never be used to hurt you\n";
+        cout << "When the scorpion stung the frog, the frog couldn't help it. It's in the frogs nature to help and it's in your nature to sting...\n";
+        cout <<"You cannot pretend to be somebody else, be yourself because everybody else is taken, it seems you have embraced that\n";
+    }
+    else if (crushed = false){
+        cout << "What do you think you are doing? Do you really think you can escape this place?\n";
+        cout << "Do you really think you can help the innocence you have found here? Even if you do won't it just die from something else out there? Tell me isn't it better they die now in this place than out there?\n";
+        cout << "You are in here for a reason, don't try and kid yourself...\n";
+    }
+    cout << "You are on a game show, there are three doors. Two have a goat and one have a car\n";
+    cout << "The game show host knows which doors hide which objects, he tells you to pick a door. You pick one and then he goes and opens another door. A goat!\n";
+    cout << "He asks you, would you like to switch your door?\n";
+    cout << "there's one tablet in the center of the room\n";
+    char montHall;
+    win = false;
+     while (true){
+        cin >> montHall;
+        if (montHall == 'y' or montHall == 'Y' or montHall == 'n' or montHall == 'N'){
+            break;
+        }
+    }
+    if (montHall == 'y' or montHall == 'Y'){
+        win = true;
+    }
+     else if (p3ch == 'N' or p3ch == 'n'){
+        win = false;
+    }
+    int mHOGN = 0;
+    int mHOGD = 0;
+    cout << "The screen Flashes\n";
+    cout << "Enter top number and bottom number of a fraction, for the proabability there is a car behind the door you chose to begin with\n";
+    cout << "Enter numerator: \n";
+    while (true){
+    cin >> mHOGN;
+    if (!cin){
+        continue;
+    }
+    else {
+        break;
+    }
+    }
+    cout << "Enter denominator: \n";
+    while (true){
+    cin >> mHOGD;
+    if (!cin){
+        continue;
+    }
+    else {
+        break;
+    }
+    }
+    if (mHOGN == 1 and mHOGD == 3){
+        win = true;
+    }
+    else {
+        win = false;
+    }
+    cout << "Enter top number and bottom number of a fraction, for the proabability there is a car behind the door you can switch to\n";
+    int mHswtitchN = 0;
+    int mHswitchD = 0;
+    cout << "Enter the numerator: \n";
+    while (true){
+    cin >> mHswtitchN;
+    if (!cin){
+        continue;
+    }
+    else {
+        break;
+    }
+    }
+    cout << "Enter the denominator: \n";
+    while (true){
+    cin >> mHswitchD;
+    if (!cin){
+        continue;
+    }
+    else {
+        break;
+    }
+    }
+     if (mHswtitchN == 2 and mHswitchD== 3){
+        win = true;
+    }
+    else {
+        win = false;
+    }
+    if (win == false){
+        cout << "Molten liquid gold sprinkles from holes on all sides of the room, it sinks you to the ground when enough is piled onto you as you burn and suffocate to death\n";
+
+    }
+
+// two bets choices then "tell me the mathmatical conecpept in proablity theory and statics that this problems is about, LLN. varys riddle last"
 }
