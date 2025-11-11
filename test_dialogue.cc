@@ -11,14 +11,17 @@
     cout << "\n ===TESTING===" << endl;
 
     // Test location descriptions
-    cout << "\n--- Testing Location Descriptions ---" << endl;
-    showLocDescrip("MIDDLE_OF_FOREST");
+    //cout << "\n--- Testing Location Descriptions ---" << endl;
+    //showLocDescrip("MIDDLE_OF_FOREST");
 
     //Test dialogues with actions
-    cout << "\n--- Testing Dialogues with Actions ---" << endl;
-    showDialogueWithPause("RANDOM_BRO");
+    //cout << "\n--- Testing Dialogues with Actions ---" << endl;
+    //showDialogueWithPause("RANDOM_BRO");
 
-    showDialogue("TEST_2");
+    showDialogueWithPause("PZL1_PT1");
+    showDialogueWithPause("PZL1_PT1_BAD_GUY");
+    showDialogueWithPause("PZL1_PT1_BAD_GUY1");
+    showDialogue("PLZ1_PT1_BAD_GUY2");
 
     cout << "\n=== END OF Test ===" << endl;
 
