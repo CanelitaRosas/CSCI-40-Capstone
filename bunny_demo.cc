@@ -61,4 +61,4 @@ int main() {
 	resetcolor();
 	set_cursor_mode(true);
 	clearscreen();
-}
+
