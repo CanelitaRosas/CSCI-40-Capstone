@@ -350,5 +350,10 @@ const vector<string> map11 {
 };
 
 
-
-
+const vector<string> msg_NotUnlocked {
+    "*********************************************",
+    "*                                           *",
+    "*    This node has not yet been unlocked    *",
+    "*                                           *",
+    "*********************************************",
+};
