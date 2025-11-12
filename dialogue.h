@@ -6,7 +6,7 @@
 #include <map>
 using namespace std;
 
-//Struct for a single line (speech or action)
+// Struct for a single line (speech or action)
 struct Line {
     string type;
     string speaker;
@@ -18,9 +18,13 @@ struct Dialogue {
     vector<Line> lines;
 };
 
-//Main functions
+// Main functions
 void initializeDialogues(); //Load all dialogues into memory
 void showDialogue(string dialogueID);
+void showDialogueWithPause(string dialogueID);
 void showLocDescrip(string location);
+
+// Helper function for wrapping
+void printWrapped(string text, int maxWidth, string indent = "");
 
 #endif
