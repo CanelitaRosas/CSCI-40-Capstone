@@ -11,6 +11,20 @@
 * When item is on the same tile as enemey, add 1 to hit counter
 */
 
+
+#include <iostream>
+#include <cmath>
+#include "/public/read.h"
+#include "/public/colors.h"
+#include <vector>
+#include <algorithm>
+#include <unistd.h>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int combatMain() {
+    clearscreen();
 // Establishing characters
 
 const auto [rows, cols] = get_terminal_size();
@@ -45,9 +59,10 @@ if (ch == ERR) {
 }
 
 // Quits on q or Q
-if (ch == 'Q' or ch == 'q') {
-    break;
-}
+		if (ch == 'Q' or ch == 'q') {
+		    return 1;
+			break;
+		}
 
 if (ch == UP_ARROW) y--;
 if (ch == DOWN_ARROW) y++;
@@ -67,16 +82,21 @@ if (x == ItemX && y = ItemY) {
 }
 
 // If item touches enemy, hits++;
-if (hasItem) {
-    if (x == EnemyX && y == EnemyY) {
-        hits++;
+		if (hasItem) {
+			if (x + 1  == EnemyX && y == EnemyY) {
+				hits++;
+				return 1;
+				// Knocks enemy back to reduce loop
 
-        // Knocks enemy back to reduce loop
+				EnemyX--;
 
-        EnemyX--;
-    }
-}
-clearscreen();
+				if (EnemyX < 0) {
+					EnemyX = 0;
+				}
+			}
+			clearscreen();
+
+		}
 
 // Make Screen (WIP)
 movecursor(y, x);
