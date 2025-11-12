@@ -1,6 +1,7 @@
 #include <vector>
-#include "error.cc"
+#include "error.h"
 #include "mapData.h"
+#include <iostream>
 using namespace std;
 
 int g_currentMap;
@@ -96,6 +97,7 @@ void drawNotUnlocked() {
 void drawMap(int mapToDraw) {
     switch(mapToDraw) {
         case 0:
+            //clearscreen();
             drawMap0();
             break;
         case 1:

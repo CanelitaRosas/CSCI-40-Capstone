@@ -1,13 +1,16 @@
+#ifndef ERROR_H
+#define ERROR_H
+
 #include <vector>
 #include <string>
-#include "/public/colors.h"
 #include <iostream>
-
+#include "/public/colors.h"
 using namespace std;
 
 enum ERROR {
     MAP_ERROR
 };
+
 const vector<string> ERROR_InvalidMap {
     "************************************",
     "*            --- OOPS ---          *",
@@ -34,3 +37,5 @@ void drawError(ERROR error) {
             cout << RESET << endl;
     }
 }
+
+#endif
