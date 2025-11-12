@@ -47,10 +47,12 @@ int start(){
     if (ch == 'y' or ch == 'Y'){
         cout << "you gently pluck the rose from it's resting place, and hold it in your hand such innocence should be protected\n";
         rose.at(0) = true;
+        return 0;
     }
     else {
         cout << "You never were one to commit selfless acts... maybe that's what brought you here to begin with???\n";
         crushed = true;
+        return 0;
     }
     // when the character walks forward into the door
 }
@@ -150,6 +152,7 @@ int puzzle1() {
     cout << "answer me this is it better to perish here a gardener or exit this place a warrior?\n";
     cout << "Don't answer that... They say when people show you who they really are to believe them and I think you've show us all just who you really are"<<endl;
     cout << "Laughter erupts behind you as you hear the door in front of you unlock"<<endl;
+    return 1;
     }
     else if (roseN(rose) == false){
          cout << "A voice screeches onto the intercom"<<endl;
@@ -157,6 +160,7 @@ int puzzle1() {
          cout << "We are the only ones wathcing you and we have already judged you, do you think you have anything in common with us?"<<endl;
          cout << "You wouldn't be in your predictament if you did... You'd be where I stand not the other way around"<< endl;
          cout <<"You hear a door unlock in front of you\n";
+         return 1;
     }
 }
 int puzzle2() {
@@ -233,6 +237,7 @@ int puzzle2() {
     }
     else {
         cout << "You hear the door in front of you unlock, and prepare yourself for what is to come\n";
+        return 1;
     }
 }
 int puzzle3() {
@@ -347,13 +352,14 @@ int puzzle3() {
     }
      if (mHswtitchN == 2 and mHswitchD== 3){
         win3 = true;
+        return 1;
     }
     else {
         win3 = false;
     }
     if (win3 == false){
         cout << "Molten liquid gold sprinkles from holes on all sides of the room, it sinks you to the ground when enough is piled onto you as you burn and suffocate to death\n";
-
+        return 0;
     }
 }
 // two bets choices then "tell me the mathmatical conecpept in proablity theory and statics that this problems is about, LLN. varys riddle last"
