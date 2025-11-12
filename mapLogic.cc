@@ -86,15 +86,11 @@ void drawMap11() {
     }
 }
 
-void drawError() {
-    for (size_t i = 0; i < ERROR_InvalidMap.size(); i++ ) {
-        cout << ERROR_InvalidMap.at(i) << endl;
-    }
-}
+
 
 void drawNotUnlocked() {
     for (size_t i = 0; i < msg_NotUnlocked.size(); i++ ) {
-        
+
     }
 }
 
@@ -143,5 +139,5 @@ void drawMap(int mapToDraw) {
 }
 
 int main() {
-
+    drawError();
 }
