@@ -1,5 +1,4 @@
 #include <vector>
-#include "/public/colors.h"
 #include "error.cc"
 #include "mapData.h"
 using namespace std;
@@ -136,8 +135,4 @@ void drawMap(int mapToDraw) {
             drawError(ERROR::MAP_ERROR);
             break;
     }
-}
-
-int main() {
-    drawError(ERROR::MAP_ERROR);
 }
