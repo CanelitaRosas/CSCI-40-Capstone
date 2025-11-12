@@ -22,6 +22,7 @@ struct Dialogue {
 void initializeDialogues(); //Load all dialogues into memory
 void showDialogue(string dialogueID);
 void showDialogueWithPause(string dialogueID);
+bool showDialogueWithChoice(string dialogueID);
 void showLocDescrip(string location);
 
 // Helper function for wrapping

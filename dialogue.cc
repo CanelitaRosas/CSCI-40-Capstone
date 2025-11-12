@@ -99,9 +99,42 @@ void initializeDialogues() {
     //          {"danger", "", "*Dangerous action*"},
     //     }
     //}
+    dialogues["UTILITY_PAUSE"] = {
+        {
+            {"narration", "", ""},
+        }
+    };
+
+    dialogues["INTRO_PT1"] = {
+        {
+            {"narration", "", "You wake in a pit, rays of sunshine blind your retinas. Slowly your vision adjusts revealing the situation before you."},
+            {"narration", "", "You don't know where you are. You stand and try to gather your bearings."},
+            {"narration", "", "You look up and see a crowd of spectators. They shower you with laughter, deriding your current helpessness."}
+        }
+    };
+
+    dialogues["INTRO_PT2"] = {
+        {
+            {"narration", "", "Amidst your confusion and humiliation, you look around the pit. On the nearby wall is a single metal door. Next to the door growing out of a crack in the wall was a lone rose. A trickle of water from the crack above lapped at its petals making it glisten in the sunshine."},
+            {"narration", "", "Such an object of beauty and innocence. Why is it here of all places? It surely won't survive here."},
+            {"narration", "", "Do you take the rose? Y/N:"}
+        }
+    };
+    dialogues["INTRO_ACCEPTED"] = {
+        {
+            {"narration", "", "You gently pluck the rose from the crack in the wall and cradle it close."}
+        }
+    };
+    dialogues["INTRO_DECLINED"] = {
+        {
+            {"narration", "", "You were never one to commit selfless acts... Mayde that is why you are here in the first place?"}
+        }
+    };
+
     dialogues["PZL1_PT1"] = {
         {
-            {"narration", "", "You walk into a dank billiard ball room. Mositure and woft of mildew threatened to choke your windpipe."}, 
+            {"narration", "", "The locks on the metal door unlatch with a loud clanky thunk, then the door swings open towards you. It is too bright in the pit to see inside the door, so it just looks light a rectangular void, swalloing the light."}, 
+            {"narration", "", "You walk into the doorway into what seems to be a dank billiard ball room. Mositure and woft of mildew threatened to choke your windpipe."}, 
             {"narration", "", "Going back wasn't an option. The only way is forward"},
             {"narration", "", "Slowly you stepped inside. As soon as your rear foot crossed the threshold, the heavy metal door slammed shut behnd you. Muffled clicks and clacks crawled along the inside of the door."},
             {"narration", "", "With a final thud, the locks slid home, and you were trapped."},
@@ -112,7 +145,7 @@ void initializeDialogues() {
 
     dialogues["PZL1_PT1_BAD_GUY"] = {
         {
-            {"speech", "Mysterious_Voice", "GOT YOU!!! You walked righ tinto my trap! BAHAHAHA!"}
+            {"speech", "Mysterious_Voice", "GOT YOU!!! You walked right into my trap! BAHAHAHA!"}
         }
     };
     dialogues["PZL1_PT1_BAD_GUY1"] = {
@@ -120,17 +153,28 @@ void initializeDialogues() {
             {"speech", "Mysterious Voice", "You simpelton! How could you possibly fall for such an elementary trap. Just how dull are you?"},
             {"speech", "", "Well, if you want out of here. You're going to have to use that excuse for a mind you've got, and not be a boneheaded brute for a change"},
             {"speech", "", "Best to try and keep up!"},
-            {"speech", "", "In front of you is a puzzle of my own making! You need to solve it in order to leave. Simple!"},
+            {"speech", "", "In front of you is a puzzle of my own making! You need to solve it in order to leave. Simple!"}
+        }
+    };
+    dialogues["PZL1_PT1_BAD_GUY2"] = {
+        {
             {"speech", "Mysterious Voice", "But if you even try to cheat... The room is rigged to explode! Heh heh."},
             {"speech", "", "That glass box has a handful of billiard balls. They are all perfectly identicle. Except for one. It is an imposter, a fake, an odd one out. Just like so many of your pathetic species nowadays. I mean, that why you're here and all."},
             {"speech", "", "The imposter ball has a slgihtly different mass to all the others. They will all feel the same if you pick them up, but the scale, over there, is specially calibrated to detect this impostor."}
         }
     };
-    dialogues["PLZ1_PT1_BAD_GUY2"] = {
+    dialogues["PLZ1_PT1_BAD_GUY3"] = {
         {
-            {"speech", "Mysterious Voice", "Now, simpleton, the rules are as follows:"},
-            {"speech", "", "First, you get two attempts to weight the billard balls"},
-            {"speech", "", "Second, displayed on the touchscreen are two boxes. Chose a number for each box. This number will represent how many balls are randomly placed on either scale."}
+            {"speech", "Mysterious Voice", "Now, simpleton, you get two attempts to weigh the billard balls."},
+            {"speech", "", "What you must do is go to the touchscreen and chose a number for each scale. This number will represent the nmumber of balls the scale will randomly pick. So, for exapmle, you pick two for the right cale and left scale. It will then randomly pick two balls for the rights scale and two balls for the left scale."},
+            {"speech", "", "This next part is important, so LISTEN TO ME, OKAY!? The screen will then flash and ask you to make another choice for the second weigh-in. If you try for a third, then BOOM! Bye bye, I wish I could miss you... NOT!"}
+        }
+    };
+    dialogues["PLZ1_PT1_BAD_GUY4"] = {
+        {
+            {"speech", "BAD_GUY", "Oh, and just so you do not manage to get lucky, somehow. The scale will run your entries one-hundred times to make sure your choices are properly accurate. No getting saved by margin of error here. "},
+            {"speech", "", "If you pass, you will get a special prize. AND YOUR FREEDOM..."},
+            {"speech", "", "To the next chamber, at least. NOW, GO!"}
         }
     };
     dialogues["BAD_GUY_FALIURE"] = {
@@ -201,6 +245,26 @@ void showDialogueWithPause(string dialogueID) {
 
     cout << YELLOW << "\n[Press Enter to continue...]" << RESET << endl;
     cin.get();
+}
+
+bool showDialogueWithChoice(string dialogueID) {
+    showDialogue(dialogueID); 
+    
+    char choice;
+
+    while (true) {
+        cout << YELLOW << "\n[ Type Y for yes; N for no: ]" << RESET << endl;
+        cin >> choice;
+        cin.ignore();
+
+        if (choice == 'Y' || choice == 'y') {
+            return true;
+        } else if (choice == 'N' || choice == 'n') {
+            return false;
+        } else {
+            cout << RED << "Invalid Input! Enter Y or N." << RESET << endl;
+        }
+    }
 }
  
 void showLocDescrip(string location) {
