@@ -23,7 +23,7 @@
 #include <ctime>
 using namespace std;
 
-int main() {
+int combatMain() {
 // Establishing characters
 
 	const auto [rows, cols] = get_terminal_size();
