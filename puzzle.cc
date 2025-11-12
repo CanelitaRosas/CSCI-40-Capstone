@@ -210,8 +210,9 @@ int puzzle1() {
     cout << "Laughter erupts behind you as you hear the door in front of you "
             "unlock"
          << endl;
+         set_raw_mode(true); // allow for map traversal
     return 1;
-    set_raw_mode(true); // allow for map traversal
+    
   } else if (roseN(rose) == false) {
     cout << "A voice screeches onto the intercom" << endl;
     cout << "A simple test you were expected to pass it but why are you "
@@ -224,8 +225,9 @@ int puzzle1() {
             "I stand not the other way around"
          << endl;
     cout << "You hear a door unlock in front of you\n";
-    return 1;
     set_raw_mode(true); // allow for map traversal
+    return 1;
+    
   }
 }
 int puzzle2() {
@@ -252,8 +254,9 @@ int puzzle2() {
       cout << "EPONENTIAL GROWTH!!!!! \n";
       if (crushed == false) {
         crushed = true;
+        rose.at(1) = false;
       }
-      rose.at(1) = false;
+      
     } else if (p2ch == 'N' or p2ch == 'n') {
       cout << "\n";
     }
@@ -373,7 +376,7 @@ int puzzle3() {
             "in the frogs nature to help and it's in your nature to sting...\n";
     cout << "You cannot pretend to be somebody else, be yourself because "
             "everybody else is taken, it seems you have embraced that\n";
-  } else if (crushed = false) {
+  } else if (crushed == false) {
     cout << "What do you think you are doing? Do you really think you can "
             "escape this place?\n";
     cout << "Do you really think you can help the innocence you have found "
@@ -467,6 +470,12 @@ int puzzle3() {
             "burn and suffocate to death\n";
     return 0;
   }
+  // delete this fake win
+  else {
+    win3 = true;
+}
+  set_raw_mode(true);
+  return 1;
 }
 // two bets choices then "tell me the mathmatical conecpept in proablity theory
 // and statics that this problems is about, LLN. varys riddle last"
