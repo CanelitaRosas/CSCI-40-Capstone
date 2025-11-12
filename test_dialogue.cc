@@ -8,7 +8,7 @@
     //CALL THE DIALOGUE FUNCTION
     initializeDialogues();
 
-    cout << "===TESTING===" << endl;
+    cout << "\n ===TESTING===" << endl;
 
     // Test location descriptions
     cout << "\n--- Testing Location Descriptions ---" << endl;
