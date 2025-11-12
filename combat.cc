@@ -10,7 +10,21 @@
 * When item picke dup, move it off an ofset of one tile according to the player
 * When item is on the same tile as enemey, add 1 to hit counter
 */
+/*
+To do, divers stratagems combat 
+psuedo:
+if srand(time) % 6
+== 1 : <-
+== 2 : ->
+== 3 : up
+== 4 : down
+== 5 : minus 5 seconds min of 5 seconds plus another roll with a max of 12 rolls
+== 6 : plus 2.5 seoconds and plus 2 rolls
 
+
+
+
+*/
 
 #include <iostream>
 #include <cmath>
