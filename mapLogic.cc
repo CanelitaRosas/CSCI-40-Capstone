@@ -194,6 +194,39 @@ void updateMap() {
           break;
         }
       }
+    } if (g_currentMap == 5) {
+      moveInput = quick_read();
+      if (moveInput == LEFT_ARROW) {
+        if (nodes.at(6).locked) {
+          drawMap(5);
+          drawNotUnlocked();
+        } else {
+          drawMap(4);
+        }
+      } else if (moveInput == ARROW_RIGHT) {
+        drawMap(4);
+      } else if (moveInput == '\n') {
+        if (nodes.at(5).cleared == false) {
+          break;
+        }
+      }
+    }
+    if (g_currentMap == 6) {
+      moveInput = quick_read();
+      if (moveInput == LEFT_ARROW) {
+        if (nodes.at(7).locked) {
+          drawMap(6);
+          drawNotUnlocked();
+        } else {
+          drawMap(7);
+        }
+      } else if (moveInput == ARROW_RIGHT) {
+        drawMap(5);
+      } else if (moveInput == '\n') {
+        if (nodes.at(7).cleared == false) {
+          break;
+        }
+      }
     }
   }
 }
