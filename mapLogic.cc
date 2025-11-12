@@ -201,7 +201,7 @@ void updateMap() {
           drawMap(5);
           drawNotUnlocked();
         } else {
-          drawMap(4);
+          drawMap(6);
         }
       } else if (moveInput == ARROW_RIGHT) {
         drawMap(4);
