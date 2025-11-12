@@ -25,6 +25,7 @@ equal take the side thats tipped and do the same.
 vector<bool> rose(6);
 bool crushed = false;
 char ch;
+string throwaway;
 void start() {
   cout << "you wake up in a pit with rays of sunshine beaming down on you\n";
   cout << "you don't know who you are, you stand up to get your bearings "
@@ -37,8 +38,9 @@ void start() {
   cout << "The rose is growing out of a crack in the wall where small drops of "
           "water brush against it's petals about every 60 seconds\n";
   cout << "The rose won't survive in this place.... take the rose y/n";
+  cout << endl;
   while (true) {
-    cin >> ch;
+      ch = quick_read();
     if (ch == 'y' or ch == 'Y' or ch == 'n' or ch == 'N') {
       break;
     }
@@ -46,10 +48,14 @@ void start() {
   if (ch == 'y' or ch == 'Y') {
     cout << "you gently pluck the rose from it's resting place, and hold it in "
             "your hand such innocence should be protected\n";
+    cout << "Press any key to continue";
+    throwaway = quick_read();
     rose.at(0) = true;
   } else {
     cout << "You never were one to commit selfless acts... maybe that's what "
             "brought you here to begin with???\n";
+    cout << "Press any key to continue";
+    throwaway = quick_read();
     crushed = true;
   }
   // when the character walks forward into the door
@@ -113,8 +119,9 @@ int puzzle1() {
     cout << "You hear a crowd of laughter roar behind you from the top of the "
             "pit,This your chance.... \n";
     cout << "You feel you could snuff the rose to your gain, will you?? y/n";
+    cout << endl;
     while (true) {
-      cin >> p1ch;
+      p1ch = quick_read();
       if (p1ch == 'y' or p1ch == 'Y' or p1ch == 'n' or p1ch == 'N') {
         break;
       }
