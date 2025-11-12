@@ -1,17 +1,25 @@
+
+// Rosas-Puzzles,Inv,I/o,Dialogue
+// Partners:Gregory(I/o)
+// Bullet Points:3
+// Extra Credit: 1,3
+// URL to cover art and music:
 #include "/public/colors.h"
-#include "/public/read.h"
 #include <iostream>
 #include <vector>
-
 using namespace std;
-bool roseN( const vector<bool> &r){
-    for (int i = 0; i<r.size();i++){
-        if (r.at(i) == true){
-            return true;
-        }
-        else return false;
-    }
+
+bool roseN(const vector<bool> &r) {
+  for (int i = 0; i < r.size(); i++) {
+    if (r.at(i) == true) {
+      return true;
+    } else
+      return false;
+  }
 }
+
+vector<bool> rose(6);
+bool crushed = false;
 // whe you get where you want to go how can you explain what youve done, virtue
 // wasnt conv at the time puzzles Billiard ball room
 /*the correct solution to this common puzzle is to take a "less is more" appoach
@@ -21,12 +29,10 @@ equal take the side thats tipped and do the same.
 */
 // montey hall puzzle three tbalets with three choices on each +-= signiying
 // their relationships
-// code the start
-vector<bool> rose(6);
-bool crushed = false;
-char ch;
-string throwaway;
-void start() {
+int start() {
+  // code the start
+
+  char ch;
   cout << "you wake up in a pit with rays of sunshine beaming down on you\n";
   cout << "you don't know who you are, you stand up to get your bearings "
           "correct\n";
@@ -38,9 +44,8 @@ void start() {
   cout << "The rose is growing out of a crack in the wall where small drops of "
           "water brush against it's petals about every 60 seconds\n";
   cout << "The rose won't survive in this place.... take the rose y/n";
-  cout << endl;
   while (true) {
-      ch = quick_read();
+    cin >> ch;
     if (ch == 'y' or ch == 'Y' or ch == 'n' or ch == 'N') {
       break;
     }
@@ -48,20 +53,20 @@ void start() {
   if (ch == 'y' or ch == 'Y') {
     cout << "you gently pluck the rose from it's resting place, and hold it in "
             "your hand such innocence should be protected\n";
-    cout << "Press any key to continue";
-    throwaway = quick_read();
     rose.at(0) = true;
+    return 0;
   } else {
     cout << "You never were one to commit selfless acts... maybe that's what "
             "brought you here to begin with???\n";
-    cout << "Press any key to continue";
-    throwaway = quick_read();
     crushed = true;
+    return 0;
   }
   // when the character walks forward into the door
 }
-// puzzle 1
+
 int puzzle1() {
+  set_raw_mode(false); // so you can see input
+  // puzzle 1
   cout << "You walk into a billiard ball room with sigls of playing cards and "
           "checkered patterns lining the walls this is strange!\n";
   cout << "You see two rectanglular platforms  with a large screen that sits "
@@ -119,9 +124,8 @@ int puzzle1() {
     cout << "You hear a crowd of laughter roar behind you from the top of the "
             "pit,This your chance.... \n";
     cout << "You feel you could snuff the rose to your gain, will you?? y/n";
-    cout << endl;
     while (true) {
-      p1ch = quick_read();
+      cin >> p1ch;
       if (p1ch == 'y' or p1ch == 'Y' or p1ch == 'n' or p1ch == 'N') {
         break;
       }
@@ -206,6 +210,8 @@ int puzzle1() {
     cout << "Laughter erupts behind you as you hear the door in front of you "
             "unlock"
          << endl;
+    return 1;
+    set_raw_mode(true); // allow for map traversal
   } else if (roseN(rose) == false) {
     cout << "A voice screeches onto the intercom" << endl;
     cout << "A simple test you were expected to pass it but why are you "
@@ -218,12 +224,13 @@ int puzzle1() {
             "I stand not the other way around"
          << endl;
     cout << "You hear a door unlock in front of you\n";
+    return 1;
+    set_raw_mode(true); // allow for map traversal
   }
 }
-
-// puzzle two starts just after a combat node and a rose is given
-
 int puzzle2() {
+    set_raw_mode(false);
+  // puzzle two starts just after a combat node and a rose is given
   bool win2;
   char p2ch;
   if (roseN(rose)) {
@@ -322,13 +329,15 @@ int puzzle2() {
   } else {
     cout << "You hear the door in front of you unlock, and prepare yourself "
             "for what is to come\n";
+            set_raw_mode(true);
+    return 1;
   }
 }
-// player moves to the next room gets a rose after completing another combat
-
 int puzzle3() {
+    set_raw_mode(false);
+  bool win3;
+  // player moves to the next room gets a rose after completing another combat
   rose.at(2) = true;
-  bool win3 = false;
   char p3ch;
   cout << "You walk into a room this time there is money signs and huge yellow "
           "game show lights all over the walls\n";
@@ -447,6 +456,8 @@ int puzzle3() {
   }
   if (mHswtitchN == 2 and mHswitchD == 3) {
     win3 = true;
+    set_raw_mode(true);
+    return 1;
   } else {
     win3 = false;
   }
@@ -454,5 +465,8 @@ int puzzle3() {
     cout << "Molten liquid gold sprinkles from holes on all sides of the room, "
             "it sinks you to the ground when enough is piled onto you as you "
             "burn and suffocate to death\n";
+    return 0;
   }
 }
+// two bets choices then "tell me the mathmatical conecpept in proablity theory
+// and statics that this problems is about, LLN. varys riddle last"
