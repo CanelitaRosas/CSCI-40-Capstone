@@ -24,6 +24,7 @@
 using namespace std;
 
 int combatMain() {
+    clearscreen();
 // Establishing characters
 
 	const auto [rows, cols] = get_terminal_size();
@@ -59,6 +60,7 @@ int combatMain() {
 
 // Quits on q or Q
 		if (ch == 'Q' or ch == 'q') {
+		    return 1;
 			break;
 		}
 
@@ -83,7 +85,7 @@ int combatMain() {
 		if (hasItem) {
 			if (x + 1  == EnemyX && y == EnemyY) {
 				hits++;
-
+				return 1;
 				// Knocks enemy back to reduce loop
 
 				EnemyX--;
@@ -93,6 +95,7 @@ int combatMain() {
 				}
 			}
 			clearscreen();
+
 		}
 
 // Make Screen (WIP)

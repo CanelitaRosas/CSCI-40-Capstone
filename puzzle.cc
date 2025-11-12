@@ -49,19 +49,20 @@ void start() {
     cout << "you gently pluck the rose from it's resting place, and hold it in "
             "your hand such innocence should be protected\n";
     cout << "Press any key to continue";
-    throwaway = quick_read();
+    cin.get();
     rose.at(0) = true;
   } else {
     cout << "You never were one to commit selfless acts... maybe that's what "
             "brought you here to begin with???\n";
     cout << "Press any key to continue";
-    throwaway = quick_read();
+    cin.get();
     crushed = true;
   }
   // when the character walks forward into the door
 }
 // puzzle 1
 int puzzle1() {
+  clearscreen();
   cout << "You walk into a billiard ball room with sigls of playing cards and "
           "checkered patterns lining the walls this is strange!\n";
   cout << "You see two rectanglular platforms  with a large screen that sits "
@@ -140,6 +141,7 @@ int puzzle1() {
               "wish to protect it from\n";
     }
   }
+  set_raw_mode(false);
   // we assume the player walks up to the screen here
   cout << "input choice for the left side\n";
   cin >> weighLeft1;
@@ -206,6 +208,8 @@ int puzzle1() {
     cout << "Laughter erupts behind you as you hear the door in front of you "
             "unlock"
          << endl;
+         set_raw_mode(true);
+         return 1;
   } else if (roseN(rose) == false) {
     cout << "A voice screeches onto the intercom" << endl;
     cout << "A simple test you were expected to pass it but why are you "
@@ -218,6 +222,9 @@ int puzzle1() {
             "I stand not the other way around"
          << endl;
     cout << "You hear a door unlock in front of you\n";
+    set_raw_mode(true);
+    return 1;
+
   }
 }
 
