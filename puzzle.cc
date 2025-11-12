@@ -4,13 +4,13 @@
 #include <vector>
 
 using namespace std;
-bool roseN( const vector<bool> &r){
-    for (int i = 0; i<r.size();i++){
-        if (r.at(i) == true){
-            return true;
-        }
-        else return false;
-    }
+bool roseN(const vector<bool> &r) {
+  for (int i = 0; i < r.size(); i++) {
+    if (r.at(i) == true) {
+      return true;
+    } else
+      return false;
+  }
 }
 // whe you get where you want to go how can you explain what youve done, virtue
 // wasnt conv at the time puzzles Billiard ball room
@@ -40,7 +40,7 @@ void start() {
   cout << "The rose won't survive in this place.... take the rose y/n";
   cout << endl;
   while (true) {
-      ch = quick_read();
+    ch = quick_read();
     if (ch == 'y' or ch == 'Y' or ch == 'n' or ch == 'N') {
       break;
     }

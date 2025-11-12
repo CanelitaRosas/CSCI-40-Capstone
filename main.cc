@@ -16,5 +16,7 @@ using namespace std;
 int main(){
     set_raw_mode(false);
     start();
-    drawMap1();
+    drawMap0();
+    updateMap();
+
 }
