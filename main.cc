@@ -48,6 +48,15 @@ void startTrial() {
     } else {
         exit(EXIT_SUCCESS);
     }
+  } else if (g_currentMap == 6) {
+    if(combatMain()) {
+        nodes.at(6).cleared = true;
+        nodes.at(7).locked = false;
+    } else {
+        exit(EXIT_SUCCESS);
+    }
+  } else if (g_currentMap == 7) {
+    drawError(ERROR::NOT_DONE_YET);
   }
 }
 int main() {

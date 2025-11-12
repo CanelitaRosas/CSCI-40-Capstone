@@ -8,7 +8,8 @@
 using namespace std;
 
 enum ERROR {
-    MAP_ERROR
+    MAP_ERROR,
+    NOT_DONE_YET
 };
 
 const vector<string> ERROR_InvalidMap {
@@ -22,8 +23,15 @@ const vector<string> ERROR_InvalidMap {
     "************************************",
 };
 
-const vector<string> ERROR_A {
-    "Fill this out when needed",
+const vector<string> ERROR_NotDoneYet {
+    "*********************************************",
+    "* --- I didnt know I was playing a demo --- *",
+    "*         You're seeing this message        *",
+    "*            because we arent done          *",
+    "*           with everything yet  :(         *",
+    "*                                           *",
+    "*               Check back soon!            *",
+    "*********************************************",
 };
 
 void drawError(ERROR error) {
@@ -33,6 +41,15 @@ void drawError(ERROR error) {
             clearscreen();
             for (size_t i = 0; i < ERROR_InvalidMap.size(); i++) {
                 cout << ERROR_InvalidMap.at(i) << endl;
+            }
+            cout << RESET << endl;
+            break;
+
+        case ERROR::NOT_DONE_YET:
+            cout << GREEN << endl;
+            clearscreen();
+            for (size_t i = 0; i < ERROR_NotDoneYet.size(); i++) {
+                cout << ERROR_NotDoneYet.at(i) << endl;
             }
             cout << RESET << endl;
     }
