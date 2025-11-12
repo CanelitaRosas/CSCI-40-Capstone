@@ -1,6 +1,6 @@
 #include <vector>
 #include "/public/colors.h"
-#include "error.h"
+#include "error.cc"
 #include "mapData.h"
 using namespace std;
 
@@ -133,11 +133,11 @@ void drawMap(int mapToDraw) {
             drawMap11();
             break;
         default:
-            drawError();
+            drawError(ERROR::MAP_ERROR);
             break;
     }
 }
 
 int main() {
-    drawError();
+    drawError(ERROR::MAP_ERROR);
 }

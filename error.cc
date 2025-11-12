@@ -27,8 +27,10 @@ void drawError(ERROR error) {
     switch (error){
         case ERROR::MAP_ERROR:
             cout << RED << endl;
+            clearscreen();
             for (size_t i = 0; i < ERROR_InvalidMap.size(); i++) {
                 cout << ERROR_InvalidMap.at(i) << endl;
             }
+            cout << RESET << endl;
     }
 }
