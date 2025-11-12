@@ -223,6 +223,23 @@ void updateMap() {
       } else if (moveInput == ARROW_RIGHT) {
         drawMap(5);
       } else if (moveInput == '\n') {
+        if (nodes.at(6).cleared == false) {
+          break;
+        }
+      }
+    }
+    if (g_currentMap == 7) {
+      moveInput = quick_read();
+      if (moveInput == UP_ARROW) {
+        if (nodes.at(8).locked) {
+          drawMap(7);
+          drawNotUnlocked();
+        } else {
+          drawMap(8);
+        }
+      } else if (moveInput == ARROW_RIGHT) {
+        drawMap(6);
+      } else if (moveInput == '\n') {
         if (nodes.at(7).cleared == false) {
           break;
         }
