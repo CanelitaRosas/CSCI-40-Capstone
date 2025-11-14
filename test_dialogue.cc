@@ -33,7 +33,7 @@
       if (accepted) {
          showDialogue("INTRO_ACCEPTED"); // Show yes dialogue
       } else {
-         showDialogue("INTRO_DECLINED");
+         showDialogue("INTRO_DECLINED"); // Show no dialogue
       }
     
     showDialogueWithPause("UTILITY_PAUSE");
@@ -42,7 +42,14 @@
     showDialogueWithPause("PZL1_PT1_BAD_GUY1");
     showDialogueWithPause("PZL1_PT1_BAD_GUY2");
     showDialogueWithPause("PLZ1_PT1_BAD_GUY3");
-    showDialogue("PLZ1_PT1_BAD_GUY4");
+    showDialogueWithPause("PLZ1_PT1_BAD_GUY4");
+    
+    bool accepted = showDialogueWithChoice("PLZ1_PT2_CHOICE");
+      if (accepted) {
+         showDialogue("PLZ1_PT2_ACCEPTED2"); // Show yes dialogue
+      } else {
+         showDialogue("PLZ1_PT2_DECLINED"); // Show no dialogue
+      }
 
     cout << "\n=== END OF Test ===" << endl;
 

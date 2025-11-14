@@ -101,7 +101,12 @@ void initializeDialogues() {
     //}
     dialogues["UTILITY_PAUSE"] = {
         {
-            {"narration", "", ""},
+            {"narration", "", ""}
+        }
+    };
+    dialogues["GENERAL_FALIURE"] = {
+        {
+            {"danger", "", "YOU PERISHED"}
         }
     };
 
@@ -177,6 +182,81 @@ void initializeDialogues() {
             {"speech", "", "To the next chamber, at least. NOW, GO!"}
         }
     };
+    dialogues["PLZ1_PT2_CHOICE"] = {
+        {
+            {"narration", "", "AN orchestra of laughter erupts from above the pit walls."}, 
+            {"narration", "", "This is your chance."},
+            {"narration", "", "Something within your mind tell you that if you crush the rose, it wopuld be to your gain."},
+            {"narration", "", "Will you do it? Y/N:"}
+        }
+    };
+    dialogues["PLZ1_PT2_ACCEPTED1"] = {
+        {
+            {"narration", "", "You smother the rose in your fist. Inflicting harm always came easy to you."},
+            {"narration", "", "Right?"}
+        }
+    };
+    dialogues["PLZ1_PT2_ACCEPTED2"] = {
+        {
+            {"narration", "", "Laughter again erupts from above. The observers were throwing a raucous fit at your choice."},
+            {"narration", "", "They clinked their drink glasses together in celebration. Then they all started shouting in unison."},
+            {"speech", "Audience", "LESS IS MORE! LESS IS MORE! LESS IS MORE!"}
+        }
+    };
+    dialogues["PLZ1_PT2_DECLINED"] ={
+        {
+            {"narration", "", "You keep the rose, its thorns teariing into your palm."},
+            {"narration", "", "Those thorns; it devloped them to protect itself from the very world you try to shelter it from."}
+        }
+    };
+    dialogues["PLZ1_FAIL_"] = {
+        {
+            {"narration", "", "The lights pop and darkness floods the room. Did you die? Or can you not see?"},
+            {"danger", "", "The room flashed with light and heat. For an instant that lasted an ternity, you felt your body burn and rip apart."}
+        }
+    };
+    dialogues["PLZ1_WIN_W/ROSE"] = {
+        {
+            {"narration", "", "The intercom screeches to life."},
+            {"speech", "Mysterious Voice", "You are not a good person, are you?"},
+            {"speech", "", "What use is life without love?"},
+            {"speech", "", "And what use is it to be a warrior in a garden without knowing how to be a gardener?"},
+            {"speech", "", "Is it better to die a gardener, or live as a warrior?"},
+            {"speech", "", "They say that a person show who they really are when their life is threatened. I think you showed us who you really are."}
+            {"speech", "", " "},
+            {"narration", "", "The audience starts laughing again at you."},
+            {"narration", "", "The exit door unlocks and opens."}
+        }
+    };
+    dialogues["PLZ1_WIN_W/O_ROSE"] = {
+        {
+            {"narration", "", "The intercom screeches to life."},
+            {"speech", "Mysterious Voice", "You were expected to pass this simples test, but who are you kidding?"},
+            {"speech", "", "We are the only ones watching you, and we have already made our judgment."},
+            {"speech", "", "Do you think you have anything in common with us?"},
+            {"speech", "", "If you did, you wouldn't be in the present situation."},
+            {"narration", "", "The exit door unlocks and opens."}
+        }
+    };
+
+    dialogues["PLZ2_CHOICE"] = {
+        {
+            {"narration", "", "The audience chuckles and cheers as you approach the next room."},
+            {"speech", "Mysterious Voice", "Do you sacrifice beauty and innocence for your own gain?"}
+        }
+    };
+    dialogues["PLZ2_CHOICE_YES"] = {
+        {
+            {"narrator", "", "The rose dies by your hand, you get a sick satisfaction from it."},
+            {"narrator", "", "The audience begins to scream and chant. Filling the rooms with their harsh euphony."},
+            {"speech", "audience", "EXPONENTIAL GROWTH! EXPONENTIAL GROWTH!"}
+        }
+    };
+    dialogues["PLZ2_CHOICE_NO"] = {
+        {
+            {"narrator", "", "You keep the rose as it is."}
+        }
+    };
     dialogues["BAD_GUY_FALIURE"] = {
         {
             {"speech", "Mysterious Voice", "YOU PERISHED! HAHA!"}
@@ -243,7 +323,7 @@ void showDialogue(string dialogueID) {
 void showDialogueWithPause(string dialogueID) {
     showDialogue(dialogueID); 
 
-    cout << YELLOW << "\n[Press Enter to continue...]" << RESET << endl;
+    cout << YELLOW << "\nCONTINUE: Enter" << RESET << endl;
     cin.get();
 }
 
@@ -253,7 +333,7 @@ bool showDialogueWithChoice(string dialogueID) {
     char choice;
 
     while (true) {
-        cout << YELLOW << "\n[ Type Y for yes; N for no: ]" << RESET << endl;
+        cout << YELLOW << "\n[Enter Y or N]" << RESET << endl;
         cin >> choice;
         cin.ignore();
 
