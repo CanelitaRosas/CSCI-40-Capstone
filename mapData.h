@@ -8,6 +8,14 @@
 
 using namespace std;
 
+
+struct Node {
+    bool locked;
+    bool cleared;
+};
+
+extern int g_CurrentNode;
+extern vector<Node> nodes;
 // Define the art for each node type, based on nodeTypes.txt
 // Each node is 5 lines high.
 const vector<string> NODE_BLANK = {
@@ -49,7 +57,7 @@ const vector<string> NODE_CLEARED = {
 //   (8) --- (9) --- (10) --- (11)
 //    |
 //   (7) --- (6) --- (5) --- (4)
-//                                |
+//                            |
 //   (0) --- (1) --- (2) --- (3)
 //
 // We add 4 spaces of padding as requested ("4 spaces before a node")

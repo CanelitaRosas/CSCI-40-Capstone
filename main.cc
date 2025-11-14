@@ -6,6 +6,7 @@
 #include "combat.cc"
 #include "dialogue.cc"
 #include "mapLogic.cc"
+#include "mapData.h"
 #include "puzzle.cc"
 #include <cstdlib>
 #include <vector>
@@ -64,10 +65,10 @@ int main() {
 	set_raw_mode(true);
 	start();
 	clearscreen();
-	drawMap(0);
+	drawMap();
 	while (true) {
 		updateMap();
 		startTrial();
-		drawMap(g_currentMap);
+		drawMap();
 	}
 }
